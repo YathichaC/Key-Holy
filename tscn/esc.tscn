@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://jsem2ovu7tq2"]
+
+[ext_resource type="Script" uid="uid://d4iqomi4fr16a" path="res://esc.gd" id="1_bhruo"]
+[ext_resource type="FontFile" uid="uid://bxrcnifikqq60" path="res://assets/font/KC Nightmare.ttf" id="1_ir4l5"]
+[ext_resource type="PackedScene" uid="uid://c40k8jugp5l0c" path="res://menu/menu.tscn" id="2_wlob4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhruo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="esc" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bhruo")
+menu_scene = ExtResource("2_wlob4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.160784, 0.160784, 0.45098)
+
+[node name="return" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -68.0
+offset_right = 106.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ir4l5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhruo")
+text = "Return to Game"
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = 27.0
+offset_right = 138.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ir4l5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_bhruo")
+text = "Back to MainMenu"
+
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
