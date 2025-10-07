@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvrwfum4yjqif"]
+
+[ext_resource type="Script" uid="uid://8qw6ves4ea8t" path="res://character/holy_water/holy_water.gd" id="1_kglyw"]
+[ext_resource type="PackedScene" uid="uid://djpok4d32qm3k" path="res://character/holy_water/models/rdr1_-_holy_water/scene.gltf" id="1_rskc2"]
+[ext_resource type="PackedScene" uid="uid://nhvuqfg32hn8" path="res://character/label/pick_key.tscn" id="3_kglyw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rskc2"]
+size = Vector3(2.0144, 1, 1.99536)
+
+[node name="holy_water" type="Node3D" groups=["HolyWater"]]
+script = ExtResource("1_kglyw")
+
+[node name="HolyWater2" parent="." instance=ExtResource("1_rskc2")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0057373, 0, -0.00012207)
+shape = SubResource("BoxShape3D_rskc2")
+
+[node name="pick" parent="." instance=ExtResource("3_kglyw")]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://xvvcjp23h04y"]
+
+[ext_resource type="Script" uid="uid://vcikv1svy1ue" path="res://character/rust-key/key.gd" id="1_8oj1e"]
+[ext_resource type="PackedScene" uid="uid://b7edmo1c01hm1" path="res://character/rust-key/key_texture.tscn" id="1_n2a22"]
+[ext_resource type="PackedScene" uid="uid://nhvuqfg32hn8" path="res://character/label/pick_key.tscn" id="3_8oj1e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2a22"]
+size = Vector3(1.99006, 0.169922, 2.00043)
+
+[node name="Key" type="Node3D" groups=["Interactable", "Key"]]
+script = ExtResource("1_8oj1e")
+
+[node name="key_low" parent="." instance=ExtResource("1_n2a22")]
+transform = Transform3D(1.2, 0, 0, 0, -5.24537e-08, -1.2, 0, 1.2, -5.24537e-08, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000159472, 0.0791016, -0.00517765)
+shape = SubResource("BoxShape3D_n2a22")
+
+[node name="pick" parent="." instance=ExtResource("3_8oj1e")]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

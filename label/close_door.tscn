@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://gq244e6xulnc"]
+
+[ext_resource type="FontFile" uid="uid://b14vctlmmvb0r" path="res://font/KC Nightmare.ttf" id="1_cxmlr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y1l5f"]
+font = ExtResource("1_cxmlr")
+font_size = 120
+
+[node name="close_door" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 310.0
+offset_right = 1011.0
+offset_bottom = 372.0
+scale = Vector2(0.5, 0.5)
+text = "[i] ปิด"
+label_settings = SubResource("LabelSettings_y1l5f")

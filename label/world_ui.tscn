@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://d07nm25p7ssd"]
+
+[ext_resource type="Texture2D" uid="uid://c0i40a6cs2wxl" path="res://img/holywater_icon.png" id="1_ujgmf"]
+[ext_resource type="Texture2D" uid="uid://dlkk02kfitutp" path="res://img/key_icon.png" id="2_68h7o"]
+[ext_resource type="FontFile" uid="uid://b14vctlmmvb0r" path="res://font/KC Nightmare.ttf" id="2_ujgmf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo7jd"]
+font = ExtResource("2_ujgmf")
+font_size = 220
+
+[sub_resource type="LabelSettings" id="LabelSettings_l275s"]
+font = ExtResource("2_ujgmf")
+font_size = 220
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1163.0
+offset_bottom = 660.0
+color = Color(0, 0, 0, 0.513726)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 32.0
+offset_right = 2006.0
+offset_bottom = 1112.0
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_ujgmf")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 128.0
+offset_right = 1994.0
+offset_bottom = 1208.0
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_68h7o")
+
+[node name="HolyWaterLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1036.0
+offset_top = 51.0
+offset_right = 1189.0
+offset_bottom = 220.0
+scale = Vector2(0.3, 0.3)
+text = "0"
+label_settings = SubResource("LabelSettings_oo7jd")
+
+[node name="KeyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 147.0
+offset_right = 1294.0
+offset_bottom = 316.0
+scale = Vector2(0.3, 0.3)
+text = "0/0"
+label_settings = SubResource("LabelSettings_l275s")
